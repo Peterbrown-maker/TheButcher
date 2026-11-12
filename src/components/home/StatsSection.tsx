@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { BRAND, MENU, MENU_ITEM_COUNT } from "@/data/macnose";
+import { MENU, MENU_ITEM_COUNT } from "@/data/belounge";
 
 const stats = [
-  { target: String(BRAND.established), label: "Serving Short Left Since" },
+  { target: "Sosha", label: "Soshanguve, Pretoria" },
   { target: `${Math.floor(MENU_ITEM_COUNT / 10) * 10}+`, label: "Dishes & Drinks" },
   { target: "02:00", label: "Late on Fridays & Saturdays" },
   { target: "7", label: "Days a Week" },

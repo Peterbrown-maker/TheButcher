@@ -1,5 +1,5 @@
 import { Navigation } from "lucide-react";
-import { DIRECTIONS_URL, SOCIALS } from "@/data/macnose";
+import { DIRECTIONS_URL, SOCIALS } from "@/data/belounge";
 import { cn } from "@/lib/utils";
 
 const FacebookIcon = ({ size = 18 }: { size?: number }) => (
@@ -35,11 +35,11 @@ export function SocialIcons({ className, onDark = false }: { className?: string;
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`MacNose Cafe on ${label}`}
+          aria-label={`Be Lounge on ${label}`}
           className={cn(
             "w-10 h-10 rounded-full border flex items-center justify-center transition-colors",
             onDark
-              ? "border-white/25 text-white/80 hover:text-white hover:border-primary"
+              ? "border-white/25 text-white/80 hover:text-white hover:border-white"
               : "border-border text-foreground/70 hover:text-primary hover:border-primary",
           )}
         >

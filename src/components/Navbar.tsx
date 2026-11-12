@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, ShoppingBag, User, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { BRAND } from "@/data/macnose";
+import { BRAND } from "@/data/belounge";
 import { useCart } from "@/context/cart";
 import { useAuth } from "@/context/auth";
 
@@ -63,7 +63,7 @@ export function Navbar() {
         <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-4 lg:px-8">
           {/* Logo */}
           <Link to="/" className="flex items-center" aria-label={`${BRAND.name} home`}>
-            <img src={BRAND.logo} alt={BRAND.fullName} className="h-11 md:h-14 w-auto rounded-full" />
+            <img src={BRAND.logo} alt={BRAND.fullName} className="h-11 md:h-14 w-auto rounded-xl" />
           </Link>
 
           {/* Desktop Nav */}

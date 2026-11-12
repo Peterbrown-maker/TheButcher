@@ -1,6 +1,6 @@
 // Opening hours as data the checkout can reason about (times in local time).
 // Mon–Thu 10:00–22:00 · Fri–Sat 10:00–02:00 (next day) · Sun 10:00–23:00.
-// Keep in sync with OPENING_HOURS in src/data/macnose.ts.
+// Keep in sync with OPENING_HOURS in src/data/belounge.ts.
 
 const OPEN_HOUR = 10;
 /** Closing hour by weekday (0 = Sunday). Values past 24 run into the next day. */

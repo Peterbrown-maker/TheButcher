@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Field, inputClass, SA_PHONE } from "@/components/FormField";
 import { useAuth } from "@/context/auth";
-import { BRAND, PHOTOS } from "@/data/macnose";
+import { BRAND, PHOTOS } from "@/data/belounge";
 
 /** Only follow same-site paths after login, never an external URL. */
 const safeNext = (next: string | null) => (next && next.startsWith("/") && !next.startsWith("//") ? next : "/account");
@@ -64,7 +64,7 @@ const Login = () => {
           <div className="hidden lg:block relative">
             <div className="absolute -inset-3 rounded-3xl border-2 border-primary/20 -rotate-2" aria-hidden="true" />
             <img src={PHOTOS.food} alt="" className="relative w-full aspect-[4/5] object-cover rounded-2xl shadow-card-hover" />
-            <img src={BRAND.logo} alt="" className="absolute -bottom-8 -right-6 w-28 h-28 rounded-full border-4 border-white shadow-xl" />
+            <img src={BRAND.logo} alt="" className="absolute -bottom-8 -right-6 w-28 h-28 rounded-3xl border-4 border-white shadow-xl" />
           </div>
 
           <div className="w-full max-w-md mx-auto">
@@ -124,7 +124,7 @@ const Login = () => {
             </form>
 
             <p className="text-sm text-muted-foreground text-center mt-6">
-              {mode === "login" ? "New to MacNose? " : "Already have an account? "}
+              {mode === "login" ? "New to Be Lounge? " : "Already have an account? "}
               <button onClick={() => switchMode(mode === "login" ? "signup" : "login")} className="text-primary font-semibold hover:underline">
                 {mode === "login" ? "Create an account" : "Log in"}
               </button>

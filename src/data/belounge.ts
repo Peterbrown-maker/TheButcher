@@ -1,26 +1,25 @@
-// Everything the site says about MacNose Cafe lives here, so a price, the
+// Everything the site says about Be Lounge lives here, so a price, the
 // address or the opening hours only ever need changing in one place.
 //
-// Menu, prices, hours, address and photos come from macnosecafeshortleft.co.za.
-// TODO (owner): add a phone number / email if you want them shown on the site.
+// TODO (owner): confirm the street address, phone number / email and socials.
 
-const IMG = "/images/macnose";
+const IMG = "/images/macnose"; // food & venue photos
+const BRAND_IMG = "/images/belounge";
 
 export const BRAND = {
-  name: "MacNose",
-  fullName: "MacNose Cafe",
-  descriptor: "Pub & Restaurant · Short Left, Soshanguve",
-  slogan: "Take a Short Left",
-  tagline: "Good food takes time to prepare. Good memories are made here!",
-  established: 2007,
+  name: "Be Lounge",
+  fullName: "Be Lounge",
+  descriptor: "Lounge & Restaurant · Soshanguve",
+  slogan: "Just Be.",
+  tagline: "Good food, good music, good people. Just be.",
   address: {
-    street: "43 Aubrey Matlakala St",
-    area: "Short Left, Soshanguve",
-    city: "Soshanguve, Gauteng, 0164",
+    street: "Soshanguve",
+    area: "Soshanguve, Pretoria",
+    city: "Pretoria, Gauteng",
   },
   /** Used for the map embed and the "Get Directions" links. */
-  geo: { lat: -25.5238705, lng: 28.0804518 },
-  logo: `${IMG}/logo.jpg`,
+  geo: { lat: -25.513655, lng: 28.108461 },
+  logo: `${BRAND_IMG}/logo.png`,
   heroImage: `${IMG}/interior2.jpg`,
 } as const;
 
@@ -29,8 +28,8 @@ export const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destinatio
 export const MAP_EMBED_URL = `https://maps.google.com/maps?q=${BRAND.geo.lat},${BRAND.geo.lng}&z=16&output=embed`;
 
 export const SOCIALS = {
-  facebook: "https://www.facebook.com/p/Macnose-Cafe-Short-Left-100064692908943/",
-  instagram: "https://www.instagram.com/shortleft_soshanguve/",
+  facebook: "https://www.facebook.com/search/top?q=Be%20Lounge%20Soshanguve",
+  instagram: "https://www.instagram.com/explore/search/keyword/?q=Be%20Lounge%20Soshanguve",
 };
 
 export const PHOTOS = {
@@ -126,7 +125,7 @@ export const MENU: MenuSection[] = [
   },
   {
     id: "cooked",
-    name: "Cooked MacNose Meals",
+    name: "Cooked Be Lounge Meals",
     kind: "food",
     tagline: "Available daily \u00b7 Ask your waitron",
     note: "Ask your waitron for daily availability.",
@@ -195,11 +194,11 @@ export const MENU: MenuSection[] = [
     groups: [
       {
         items: [
-          { name: "MacNose Shisanyama Platter", price: 590, description: "4 short ribs, 4 wings, 2 pork chops, served with 4 pap, salsa & gravy" },
+          { name: "Be Lounge Shisanyama Platter", price: 590, description: "4 short ribs, 4 wings, 2 pork chops, served with 4 pap, salsa & gravy" },
           { name: "Seafood Platter for One", price: 180, description: "Hake, Calamari, Prawns, Mussels, Squid heads and fries" },
           { name: "Platter for One", price: 180, description: "3 Wings, Cocktail sausages, ribs served with fries" },
           { name: "Sharing Platter", price: 450, description: "Cocktail sausages, Ribs, hake fillet, crumbled wings / grilled wings, calamari and fries" },
-          { name: "MacNose Meaty Platter", price: 460, description: "Lamb chops, Short rib, Cocktail wors, chicken wings & Fries" },
+          { name: "Be Lounge Meaty Platter", price: 460, description: "Lamb chops, Short rib, Cocktail wors, chicken wings & Fries" },
         ],
       },
     ],
@@ -217,16 +216,16 @@ export const MENU: MenuSection[] = [
         items: [
           { name: "Chicken Salad", price: 90 },
           { name: "Chorizo & Olives", price: 78 },
-          { name: "MacNose Wings and Calamari", price: 105 },
+          { name: "Be Lounge Wings and Calamari", price: 105 },
           { name: "Large Oysters", price: 40 },
-          { name: "MacNose Champagne Oysters", price: "R35 each / R180", description: "Combo of 6x Oysters, served fresh with champagne mignonette" },
-          { name: "MacNose Prawn Tempura", price: 85, description: "Deep fried prawns served with creamy dip sauce" },
+          { name: "Be Lounge Champagne Oysters", price: "R35 each / R180", description: "Combo of 6x Oysters, served fresh with champagne mignonette" },
+          { name: "Be Lounge Prawn Tempura", price: 85, description: "Deep fried prawns served with creamy dip sauce" },
         ],
       },
       {
         name: "Dessert",
         items: [
-          { name: "MacNose Sweet Treat", price: 70, description: "Ice cream or Cake of the day (with a drizzle of Custard)" },
+          { name: "Be Lounge Sweet Treat", price: 70, description: "Ice cream or Cake of the day (with a drizzle of Custard)" },
           { name: "Snack Bowl", price: 80, description: "Biltong, Peanuts (Light snack)" },
         ],
       },
@@ -515,7 +514,7 @@ export const MENU: MenuSection[] = [
     groups: [
       {
         items: [
-          { name: "MacNose Coffee", price: 50 },
+          { name: "Be Lounge Coffee", price: 50 },
           { name: "Rooibos Tea", price: 30 },
           { name: "Hot Chocolate", price: 58 },
           { name: "Coffee & Cake Slice", price: 80 },
@@ -527,9 +526,9 @@ export const MENU: MenuSection[] = [
 
 export const MENU_ITEM_COUNT = MENU.reduce((n, s) => n + s.groups.reduce((m, g) => m + g.items.length, 0), 0);
 
-/** Weekend specials and promos, as posted by MacNose. */
+/** Weekend specials and promos, as posted by Be Lounge. */
 export const SPECIALS = [
-  { src: `${IMG}/buffet_for_4.jpeg`, alt: "MacNose buffet for 4 weekend special" },
+  { src: `${IMG}/buffet_for_4.jpeg`, alt: "Be Lounge buffet for 4 weekend special" },
   { src: `${IMG}/full_chicken_coke.jpg`, alt: "Full chicken and Coke meal special" },
   { src: `${IMG}/hennessy_tonic.jpeg`, alt: "Hennessy and tonic special" },
   { src: `${IMG}/pizza.jpg`, alt: "Pizza weekend special" },
@@ -542,13 +541,13 @@ export const SPECIALS = [
 ];
 
 export const GALLERY = [
-  { src: PHOTOS.interior2, alt: "The MacNose Cafe terrace with lanterns and hanging plants" },
-  { src: PHOTOS.food, alt: "A table of MacNose dishes: grills, stews and sides" },
+  { src: PHOTOS.interior2, alt: "The Be Lounge terrace with lanterns and hanging plants" },
+  { src: PHOTOS.food, alt: "A table of Be Lounge dishes: grills, stews and sides" },
   { src: PHOTOS.traditional, alt: "Traditional South African meal" },
-  { src: PHOTOS.meal, alt: "A grilled meal from MacNose" },
-  { src: PHOTOS.oysters, alt: "MacNose Champagne Oysters" },
-  { src: PHOTOS.foodDrink, alt: "Food and drinks at MacNose Cafe" },
-  { src: PHOTOS.interior, alt: "Inside MacNose Cafe" },
+  { src: PHOTOS.meal, alt: "A grilled meal from Be Lounge" },
+  { src: PHOTOS.oysters, alt: "Be Lounge Champagne Oysters" },
+  { src: PHOTOS.foodDrink, alt: "Food and drinks at Be Lounge" },
+  { src: PHOTOS.interior, alt: "Inside Be Lounge" },
   { src: `${IMG}/wine_and_dine_steak.jpeg`, alt: "Steak with wine" },
 ];
 
@@ -571,6 +570,6 @@ export const FAQS = [
   },
   {
     q: "Where are you?",
-    a: `${BRAND.address.street}, Short Left, Soshanguve. Tap "Get Directions" anywhere on the site to open it in Google Maps.`,
+    a: `We're in ${BRAND.address.area}. Tap "Get Directions" anywhere on the site to open it in Google Maps.`,
   },
 ];

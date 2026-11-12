@@ -5,7 +5,7 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/Scroll
 import { SectionPill } from "@/components/SectionPill";
 import { motion } from "framer-motion";
 import { Beef, Fish, Music, Soup } from "lucide-react";
-import { BRAND, GALLERY, PHOTOS } from "@/data/macnose";
+import { BRAND, GALLERY, PHOTOS } from "@/data/belounge";
 
 const values = [
   { icon: Soup, name: "African Cuisine", role: "Ox tripe, tlhogo, skop and the Monday classics" },
@@ -16,7 +16,7 @@ const values = [
 
 const week = [
   { time: "Mondays", event: "Traditional Monday meals: mogodu, tlhogo, tlhakwana, chicken feet, masonja, skop, marapo and the buffet" },
-  { time: "Every day", event: "Flame grills, slow-cooked MacNose meals like oxtail and goat stew, sharing platters and light meals" },
+  { time: "Every day", event: "Flame grills, slow-cooked Be Lounge meals like oxtail and goat stew, sharing platters and light meals" },
   { time: "Weekends", event: "Weekend specials, bottles on ice, and the doors stay open until 02:00 on Friday and Saturday" },
   { time: "Sundays", event: "Open from 10:00 until 23:00. Wind the weekend down slowly" },
 ];
@@ -28,12 +28,12 @@ const About = () => {
       <main>
         {/* Hero */}
         <PageHero
-          pill={`Established in ${BRAND.established}`}
+          pill="Soshanguve, Pretoria"
           title="Our Sanctuary"
           image={PHOTOS.interior2}
-          imageAlt="The MacNose Cafe terrace with lanterns and hanging plants"
+          imageAlt="The Be Lounge terrace with lanterns and hanging plants"
         >
-          {BRAND.fullName} has been a pub &amp; restaurant in Short Left, Soshanguve since {BRAND.established}. A place to eat
+          {BRAND.fullName} is a lounge &amp; restaurant in Soshanguve. A place to eat
           well, drink well and make good memories.
         </PageHero>
 
@@ -42,7 +42,7 @@ const About = () => {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
               <ScrollReveal>
-                <img src={PHOTOS.interior} alt="Inside MacNose Cafe" className="w-full max-w-sm mx-auto rounded-2xl shadow-card-hover" />
+                <img src={PHOTOS.interior} alt="Inside Be Lounge" className="w-full max-w-sm mx-auto rounded-2xl shadow-card-hover" />
               </ScrollReveal>
               <ScrollReveal delay={0.15}>
                 <SectionPill>Our Promise</SectionPill>
@@ -63,7 +63,7 @@ const About = () => {
           <div className="container mx-auto px-4 lg:px-8">
             <ScrollReveal>
               <div className="text-center mb-16">
-                <SectionPill>Pub &amp; Restaurant</SectionPill>
+                <SectionPill>Lounge &amp; Restaurant</SectionPill>
                 <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground mt-4">What We're Known For</h2>
               </div>
             </ScrollReveal>
@@ -84,7 +84,7 @@ const About = () => {
           </div>
         </section>
 
-        {/* A week at MacNose */}
+        {/* A week at Be Lounge */}
         <section className="py-24 bg-white border-t border-border relative overflow-hidden">
           <div className="container mx-auto px-4 lg:px-8 relative z-10">
             <ScrollReveal>

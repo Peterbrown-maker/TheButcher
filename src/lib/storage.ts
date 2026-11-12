@@ -2,7 +2,7 @@
 // visitor's browser. Storage can be blocked (private mode, disabled cookies),
 // so every access is wrapped and the app keeps working in memory without it.
 
-const PREFIX = "macnose:";
+const PREFIX = "belounge:";
 
 export function load<T>(key: string, fallback: T): T {
   try {

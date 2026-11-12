@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { QuantityControl } from "@/components/cart/QuantityControl";
 import { useCart } from "@/context/cart";
 import { useAuth } from "@/context/auth";
-import { formatPrice } from "@/data/macnose";
+import { formatPrice } from "@/data/belounge";
 
 export function CartDrawer() {
   const { lines, count, subtotal, isOpen, setOpen, setQty, clear } = useCart();

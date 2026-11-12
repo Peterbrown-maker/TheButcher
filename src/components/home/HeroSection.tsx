@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { VisitButtons } from "@/components/VisitButtons";
-import { BRAND, PHOTOS } from "@/data/macnose";
+import { BRAND, PHOTOS } from "@/data/belounge";
 
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center bg-white overflow-hidden">
-      {/* Soft red glow, echoing the logo's red circle */}
+      {/* Soft ink glow, echoing the glossy logo */}
       <motion.div
         animate={{ y: [0, -30, 0], x: [0, 20, 0] }}
         transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
@@ -25,7 +25,7 @@ export function HeroSection() {
               className="inline-flex items-center gap-2 rounded-pill px-4 py-1.5 text-xs font-semibold tracking-widest uppercase bg-primary/10 text-primary border border-primary/20"
             >
               <span className="w-2 h-2 rounded-full bg-primary" />
-              Est. {BRAND.established} · Short Left
+              Soshanguve · Pretoria
             </motion.div>
 
             <motion.h1
@@ -43,7 +43,7 @@ export function HeroSection() {
               transition={{ delay: 0.5 }}
               className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed"
             >
-              {BRAND.fullName} is a pub &amp; restaurant in Short Left, Soshanguve. Ox tripe and traditional Monday
+              {BRAND.fullName} is a lounge &amp; restaurant in Soshanguve. Ox tripe and traditional Monday
               meals, flame grills, oxtail, seafood platters and oysters, with superior wines, premium bottles and
               feel-good music.
             </motion.p>
@@ -67,8 +67,8 @@ export function HeroSection() {
               className="grid grid-cols-3 gap-6 pt-8 border-t border-border"
             >
               {[
-                { value: String(BRAND.established), label: "Established" },
-                { value: "Pub", label: "& Restaurant" },
+                { value: "Sosha", label: "Pretoria" },
+                { value: "Lounge", label: "& Restaurant" },
                 { value: "S.A.", label: "Cuisine" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center md:text-left">
@@ -94,13 +94,13 @@ export function HeroSection() {
               <div className="absolute -inset-3 rounded-[1.75rem] border-2 border-primary/25 rotate-2" aria-hidden="true" />
               <img
                 src={PHOTOS.food}
-                alt="A table of MacNose dishes: grills, stews, pap and drinks"
+                alt="A table of Be Lounge dishes: grills, stews, pap and drinks"
                 className="relative w-full rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.35)]"
               />
               <img
                 src={BRAND.logo}
                 alt=""
-                className="absolute -bottom-8 -left-4 md:-left-8 w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white shadow-xl"
+                className="absolute -bottom-8 -left-4 md:-left-8 w-24 h-24 md:w-32 md:h-32 rounded-[1.75rem] border-4 border-white shadow-xl"
               />
             </motion.div>
           </motion.div>

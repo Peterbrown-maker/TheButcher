@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { MENU, formatPrice } from "@/data/macnose";
+import { MENU, formatPrice } from "@/data/belounge";
 
 /** The food sections that have a photo, shown as cards with a "from" price. */
 const highlights = MENU.filter((s) => s.kind === "food" && s.image).slice(0, 3);

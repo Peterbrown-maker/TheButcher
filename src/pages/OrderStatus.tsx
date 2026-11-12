@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/context/auth";
 import { ORDER_STEPS, orderStepIndex, useNow, useOrders } from "@/context/orders";
-import { BRAND, DIRECTIONS_URL, formatPrice } from "@/data/macnose";
+import { BRAND, DIRECTIONS_URL, formatPrice } from "@/data/belounge";
 import { describeFulfilment, describePayment, describeWhen, useReorder } from "@/lib/order-helpers";
 import { cn } from "@/lib/utils";
 

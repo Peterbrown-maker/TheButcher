@@ -9,7 +9,7 @@ import { Info, ShoppingBag } from "lucide-react";
 import { QuantityControl } from "@/components/cart/QuantityControl";
 import { useCart } from "@/context/cart";
 import { itemId } from "@/lib/menu";
-import { BRAND, MENU, PHOTOS, formatPrice, type MenuGroup, type MenuSection } from "@/data/macnose";
+import { BRAND, MENU, PHOTOS, formatPrice, type MenuGroup, type MenuSection } from "@/data/belounge";
 
 const FOOD = MENU.filter((s) => s.kind === "food");
 const DRINKS = MENU.filter((s) => s.kind === "drinks");
@@ -152,7 +152,7 @@ const Menu = () => {
       <Navbar />
       <main>
         {/* Hero */}
-        <PageHero pill="Food &amp; Drinks" title="Our Menu" image={PHOTOS.foodDrink} imageAlt="Food and drinks at MacNose Cafe">
+        <PageHero pill="Food &amp; Drinks" title="Our Menu" image={PHOTOS.foodDrink} imageAlt="Food and drinks at Be Lounge">
           Traditional Monday meals, flame grills, slow-cooked stews, sharing platters, oysters and a full bar. Tap Add on
           anything you fancy, then order for collection or straight to your table.
         </PageHero>
@@ -194,7 +194,7 @@ const Menu = () => {
             <ScrollReveal>
               <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground mb-6">Hungry Yet?</h2>
               <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                Take a short left to {BRAND.address.street}. We're open from 10:00 every day, and until 02:00 on
+                Come through to {BRAND.fullName}. We're open from 10:00 every day, and until 02:00 on
                 Fridays and Saturdays.
               </p>
               <VisitButtons center />

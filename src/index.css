@@ -5,24 +5,24 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 7%;
+    --foreground: 224 65% 4%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 7%;
+    --card-foreground: 224 65% 4%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 7%;
+    --popover-foreground: 224 65% 4%;
 
-    --primary: 350 85% 42%;
+    --primary: 222 39% 7%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 7%;
+    --secondary: 222 39% 7%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 36%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 219 8% 38%;
 
-    --accent: 350 85% 42%;
+    --accent: 218 10% 33%;
     --accent-foreground: 0 0% 100%;
 
     --success: 142 71% 45%;
@@ -34,37 +34,37 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 96%;
-    --ring: 350 85% 42%;
+    --border: 220 11% 90%;
+    --input: 220 14% 96%;
+    --ring: 222 39% 7%;
 
     --radius: 0.75rem;
 
-    /* Brand tokens: white canvas, black type, MacNose red. Matches the logo. */
-    --primary-hover: 350 85% 34%;
+    /* Brand tokens: white canvas, glossy ink black and steel. Matches the Be Lounge logo. */
+    --primary-hover: 222 22% 20%;
     --primary-light: 0 0% 100%;
-    --secondary-light: 0 0% 14%;
+    --secondary-light: 222 20% 14%;
     --text-on-dark: 0 0% 96%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, #0a0a0a 0%, #171717 50%, #0a0a0a 100%);
-    --gradient-primary: linear-gradient(135deg, #d61a35 0%, #9a0a20 100%);
-    --gradient-accent: linear-gradient(135deg, #d61a35 0%, #9a0a20 100%);
+    --gradient-hero: linear-gradient(135deg, #03060e 0%, #1a2030 50%, #03060e 100%);
+    --gradient-primary: linear-gradient(135deg, #2a3142 0%, #0b0f19 55%, #03060e 100%);
+    --gradient-accent: linear-gradient(135deg, #0b0f19 0%, #4b515c 100%);
 
     /* Shadows */
-    --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.08);
-    --shadow-card-hover: 0 20px 40px rgba(0, 0, 0, 0.14);
-    --shadow-button: 0 4px 14px rgba(200, 16, 46, 0.3);
+    --shadow-card: 0 4px 16px rgba(11, 15, 25, 0.08);
+    --shadow-card-hover: 0 20px 40px rgba(11, 15, 25, 0.16);
+    --shadow-button: 0 6px 18px rgba(11, 15, 25, 0.28);
 
     /* Sidebar defaults */
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 0 0% 20%;
-    --sidebar-primary: 350 85% 42%;
+    --sidebar-primary: 222 39% 7%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 350 80% 97%;
-    --sidebar-accent-foreground: 350 85% 42%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 222 39% 7%;
     --sidebar-border: 0 0% 90%;
-    --sidebar-ring: 350 85% 42%;
+    --sidebar-ring: 222 39% 7%;
   }
 }
 
@@ -103,7 +103,7 @@
   }
 
   .glass-navbar-dark {
-    background: rgba(10, 10, 10, 0.92);
+    background: rgba(3, 6, 14, 0.92);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -160,7 +160,7 @@
   }
 
   .gradient-mesh::before {
-    background: hsl(350 85% 45%);
+    background: hsl(218 10% 45%);
     top: -200px;
     right: -100px;
     animation-delay: 0s;

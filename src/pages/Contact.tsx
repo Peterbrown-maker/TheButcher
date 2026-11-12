@@ -7,7 +7,7 @@ import { SectionPill } from "@/components/SectionPill";
 import { SOCIAL_LINKS } from "@/components/VisitButtons";
 import { motion } from "framer-motion";
 import { ChevronDown, Clock, MapPin, Navigation } from "lucide-react";
-import { BRAND, DIRECTIONS_URL, FAQS, MAP_EMBED_URL, OPENING_HOURS, PHOTOS } from "@/data/macnose";
+import { BRAND, DIRECTIONS_URL, FAQS, MAP_EMBED_URL, OPENING_HOURS, PHOTOS } from "@/data/belounge";
 
 const Contact = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -17,8 +17,8 @@ const Contact = () => {
       <Navbar />
       <main>
         {/* Hero */}
-        <PageHero pill="Find Us" title="Take a Short Left" image={PHOTOS.interior} imageAlt="Inside MacNose Cafe">
-          We're at {BRAND.address.street} in Short Left, Soshanguve. Come through, or say hi on Facebook and Instagram.
+        <PageHero pill="Find Us" title="Come Through" image={PHOTOS.interior} imageAlt="Inside Be Lounge">
+          We're in {BRAND.address.area}. Come through, or say hi on Facebook and Instagram.
         </PageHero>
 
         {/* Map + Info */}
@@ -90,7 +90,7 @@ const Contact = () => {
                           rel="noopener noreferrer"
                           className="text-sm text-muted-foreground hover:text-primary transition-colors"
                         >
-                          {label === "Instagram" ? "@shortleft_soshanguve" : "Macnose Cafe Short Left"}
+                          {label === "Instagram" ? "Be Lounge on Instagram" : "Be Lounge on Facebook"}
                         </a>
                       </div>
                     </div>

@@ -8,10 +8,10 @@ import { SectionPill } from "@/components/SectionPill";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { CalendarDays, Clock } from "lucide-react";
-import { MENU, OPENING_HOURS, PHOTOS, SPECIALS, formatPrice } from "@/data/macnose";
+import { MENU, OPENING_HOURS, PHOTOS, SPECIALS, formatPrice } from "@/data/belounge";
 
 const monday = MENU.find((s) => s.id === "traditional")!;
-const oysters = MENU.flatMap((s) => s.groups.flatMap((g) => g.items)).find((i) => i.name === "MacNose Champagne Oysters")!;
+const oysters = MENU.flatMap((s) => s.groups.flatMap((g) => g.items)).find((i) => i.name === "Be Lounge Champagne Oysters")!;
 
 const Specials = () => {
   const [open, setOpen] = useState<number | null>(null);
@@ -21,8 +21,8 @@ const Specials = () => {
       <Navbar />
       <main>
         {/* Hero */}
-        <PageHero pill="Weekend Favourites" title="MacNose Specials" image={PHOTOS.food} imageAlt="A table of MacNose dishes">
-          Buffets for four, wine-and-dine combos, bottle deals and warm treats. Here's what's on at MacNose.
+        <PageHero pill="Weekend Favourites" title="Be Lounge Specials" image={PHOTOS.food} imageAlt="A table of Be Lounge dishes">
+          Buffets for four, wine-and-dine combos, bottle deals and warm treats. Here's what's on at Be Lounge.
         </PageHero>
 
         {/* Posters */}
@@ -125,7 +125,7 @@ const Specials = () => {
         <section className="py-20 gradient-primary">
           <div className="container mx-auto px-4 lg:px-8 text-center">
             <ScrollReveal>
-              <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary-foreground mb-6">Take a Short Left</h2>
+              <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary-foreground mb-6">Come Through</h2>
               <p className="text-primary-foreground/90 mb-8 max-w-xl mx-auto">
                 Good food takes time to prepare. Good memories are made here.
               </p>

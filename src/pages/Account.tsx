@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Field, inputClass, SA_PHONE } from "@/components/FormField";
 import { useAuth } from "@/context/auth";
 import { orderStatus, useNow, useOrders } from "@/context/orders";
-import { formatPrice } from "@/data/macnose";
+import { formatPrice } from "@/data/belounge";
 import { cn } from "@/lib/utils";
 import { describeFulfilment, useReorder } from "@/lib/order-helpers";
 

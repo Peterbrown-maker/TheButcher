@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Clock, MapPin, Navigation } from "lucide-react";
-import { BRAND, DIRECTIONS_URL, OPENING_HOURS } from "@/data/macnose";
+import { BRAND, DIRECTIONS_URL, OPENING_HOURS } from "@/data/belounge";
 import { SocialIcons } from "@/components/VisitButtons";
 
 const exploreLinks = [
@@ -18,9 +18,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <img src={BRAND.logo} alt={BRAND.fullName} className="h-20 w-20 rounded-full" />
+            <img src={BRAND.logo} alt={BRAND.fullName} className="h-20 w-20 rounded-2xl ring-1 ring-white/15" />
             <p className="text-sm text-white/70 leading-relaxed">
-              Pub &amp; restaurant in Short Left, Soshanguve since {BRAND.established}. South African cuisine, quality
+              Lounge &amp; restaurant in Soshanguve. South African cuisine, quality
               grills, seafood, premium bottles and feel-good music.
             </p>
             <SocialIcons onDark />
@@ -80,9 +80,9 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/60 text-center md:text-left">
           <p>
-            © {new Date().getFullYear()} {BRAND.fullName}, Short Left. All rights reserved.
+            © {new Date().getFullYear()} {BRAND.fullName}, Soshanguve. All rights reserved.
           </p>
-          <p className="font-script text-xl text-primary">{BRAND.slogan}</p>
+          <p className="font-script text-xl text-white/80">{BRAND.slogan}</p>
         </div>
       </div>
     </footer>

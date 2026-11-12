@@ -1,7 +1,7 @@
 import { Clock, MapPin } from "lucide-react";
 import { VisitButtons } from "@/components/VisitButtons";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
-import { BRAND, GALLERY, OPENING_HOURS } from "@/data/macnose";
+import { BRAND, GALLERY, OPENING_HOURS } from "@/data/belounge";
 
 export function VisitSection() {
   return (
