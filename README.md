@@ -1,6 +1,6 @@
 # MacNose Cafe Website
 
-The website for MacNose Cafe, a pub & restaurant in Short Left, Soshanguve (est. 2007): traditional Monday meals, grills, oxtail, seafood platters, oysters and a full bar. Built with Vite, React, TypeScript, Tailwind CSS and shadcn/ui.
+The website for Be Lounge, a lounge & restaurant in Soshanguve, Pretoria: traditional Monday meals, grills, oxtail, seafood platters, oysters and a full bar. Built with Vite, React, TypeScript, Tailwind CSS and shadcn/ui.
 
 ## Run it
 
@@ -25,3 +25,4 @@ Tests for the journey and the opening-hours rules: `npm test`.
 
 See [DEPLOYMENT.md](./DEPLOYMENT.md).
 "# macnosecafe" 
+"# belounge" 
