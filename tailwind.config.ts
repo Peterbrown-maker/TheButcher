@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ["Playfair Display", "serif"],
-        script: ["Great Vibes", "cursive"],
+        heading: ["Roboto Slab", "serif"],
+        script: ["Kaushan Script", "cursive"],
         body: ["Inter", "sans-serif"],
       },
       colors: {

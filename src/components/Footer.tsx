@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { Clock, MapPin, Navigation } from "lucide-react";
-import { BRAND, DIRECTIONS_URL, OPENING_HOURS } from "@/data/belounge";
+import { Clock, MapPin, Navigation, Phone } from "lucide-react";
+import { BRAND, DIRECTIONS_URL, OPENING_HOURS, telHref } from "@/data/butcher";
 import { SocialIcons } from "@/components/VisitButtons";
 
 const exploreLinks = [
@@ -18,10 +18,10 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <img src={BRAND.logo} alt={BRAND.fullName} className="h-20 w-20 rounded-2xl ring-1 ring-white/15" />
+            <img src={BRAND.logo} alt={BRAND.fullName} className="h-24 w-24 rounded-full" />
             <p className="text-sm text-white/70 leading-relaxed">
-              Lounge &amp; restaurant in Soshanguve. South African cuisine, quality
-              grills, seafood, premium bottles and feel-good music.
+              Meat &amp; shisanyama at Block FF, Soshanguve. Fresh cuts on the fire, braai platters, cold drinks and
+              live DJs.
             </p>
             <SocialIcons onDark />
           </div>
@@ -67,6 +67,14 @@ export function Footer() {
                   {BRAND.address.city}
                 </span>
               </li>
+              {BRAND.phones.map((phone) => (
+                <li key={phone} className="flex items-center gap-2">
+                  <Phone size={16} className="flex-shrink-0" />
+                  <a href={telHref(phone)} className="hover:text-white transition-colors">
+                    {phone}
+                  </a>
+                </li>
+              ))}
               <li className="flex items-center gap-2">
                 <Navigation size={16} className="flex-shrink-0" />
                 <a href={DIRECTIONS_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
@@ -80,9 +88,9 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/60 text-center md:text-left">
           <p>
-            © {new Date().getFullYear()} {BRAND.fullName}, Soshanguve. All rights reserved.
+            © {new Date().getFullYear()} {BRAND.fullName}, Block FF, Soshanguve. All rights reserved.
           </p>
-          <p className="font-script text-xl text-white/80">{BRAND.slogan}</p>
+          <p className="font-script text-xl text-primary">{BRAND.slogan}</p>
         </div>
       </div>
     </footer>

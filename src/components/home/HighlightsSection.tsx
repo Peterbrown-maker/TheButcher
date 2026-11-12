@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { MENU, formatPrice } from "@/data/belounge";
+import { MENU, formatPrice } from "@/data/butcher";
 
 /** The food sections that have a photo, shown as cards with a "from" price. */
 const highlights = MENU.filter((s) => s.kind === "food" && s.image).slice(0, 3);
@@ -23,12 +23,12 @@ export function HighlightsSection() {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <p className="font-script text-3xl text-primary mb-2">Proudly South African</p>
+            <p className="font-script text-3xl text-primary mb-2">Straight from the Fire</p>
             <h2 className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
-              Something for Every Appetite
+              Something for Every Meat Lover
             </h2>
             <p className="text-lg text-muted-foreground">
-              Mogodu on a Monday, flame grills any day, and slow-cooked oxtail when you need something hearty.
+              Shisanyama plates for one, braai platters for the whole crew, and kasi classics when you want something hearty.
             </p>
           </div>
         </ScrollReveal>

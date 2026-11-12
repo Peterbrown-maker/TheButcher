@@ -1,4 +1,4 @@
-import { MENU, type MenuItem } from "@/data/belounge";
+import { MENU, type MenuItem } from "@/data/butcher";
 
 /** A menu item that can go in the cart: it has a stable id and a numeric price. */
 export interface OrderableItem {

@@ -1,6 +1,6 @@
-# MacNose Cafe Website
+# The Butcher Monate Corner Website
 
-The website for Be Lounge, a lounge & restaurant in Soshanguve, Pretoria: traditional Monday meals, grills, oxtail, seafood platters, oysters and a full bar. Built with Vite, React, TypeScript, Tailwind CSS and shadcn/ui.
+The website for The Butcher Monate Corner, a meat & shisanyama spot at 342 Block FF, Soshanguve: shisanyama plates, braai platters, kasi classics, a full bar and live DJs. Built with Vite, React, TypeScript, Tailwind CSS and shadcn/ui.
 
 ## Run it
 
@@ -11,7 +11,7 @@ npm run dev
 
 ## Update the content
 
-The full food and drinks menu with prices, opening hours, address, social links, specials posters, gallery and FAQs all live in `src/data/macnose.ts`. The page title and social preview text are in `index.html`. Photos and the logo are in `public/images/macnose/`.
+The full food and drinks menu with prices, opening hours, address, social links, specials posters, gallery and FAQs all live in `src/data/butcher.ts`. The page title and social preview text are in `index.html`. Photos and the logo are in `public/images/butcher/`.
 
 ## Online ordering (prototype)
 
@@ -24,6 +24,4 @@ Tests for the journey and the opening-hours rules: `npm test`.
 ## Deploy
 
 See [DEPLOYMENT.md](./DEPLOYMENT.md).
-"# macnosecafe" 
-"# belounge" 
 "# TheButcher" 

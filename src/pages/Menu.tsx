@@ -9,7 +9,7 @@ import { Info, ShoppingBag } from "lucide-react";
 import { QuantityControl } from "@/components/cart/QuantityControl";
 import { useCart } from "@/context/cart";
 import { itemId } from "@/lib/menu";
-import { BRAND, MENU, PHOTOS, formatPrice, type MenuGroup, type MenuSection } from "@/data/belounge";
+import { BRAND, MENU, PHOTOS, formatPrice, type MenuGroup, type MenuSection } from "@/data/butcher";
 
 const FOOD = MENU.filter((s) => s.kind === "food");
 const DRINKS = MENU.filter((s) => s.kind === "drinks");
@@ -152,8 +152,8 @@ const Menu = () => {
       <Navbar />
       <main>
         {/* Hero */}
-        <PageHero pill="Food &amp; Drinks" title="Our Menu" image={PHOTOS.foodDrink} imageAlt="Food and drinks at Be Lounge">
-          Traditional Monday meals, flame grills, slow-cooked stews, sharing platters, oysters and a full bar. Tap Add on
+        <PageHero pill="Food &amp; Drinks" title="Our Menu" image={PHOTOS.feast} imageAlt="Grilled chicken, wings, steak, ribs, burgers, seafood and cocktails">
+          Shisanyama plates, braai platters, kasi classics, burgers, wraps and a full bar. Tap Add on
           anything you fancy, then order for collection or straight to your table.
         </PageHero>
 

@@ -6,8 +6,8 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { SectionPill } from "@/components/SectionPill";
 import { SOCIAL_LINKS } from "@/components/VisitButtons";
 import { motion } from "framer-motion";
-import { ChevronDown, Clock, MapPin, Navigation } from "lucide-react";
-import { BRAND, DIRECTIONS_URL, FAQS, MAP_EMBED_URL, OPENING_HOURS, PHOTOS } from "@/data/belounge";
+import { ChevronDown, Clock, MapPin, Navigation, Phone } from "lucide-react";
+import { BRAND, DIRECTIONS_URL, FAQS, MAP_EMBED_URL, OPENING_HOURS, PHOTOS, telHref } from "@/data/butcher";
 
 const Contact = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -17,8 +17,8 @@ const Contact = () => {
       <Navbar />
       <main>
         {/* Hero */}
-        <PageHero pill="Find Us" title="Come Through" image={PHOTOS.interior} imageAlt="Inside Be Lounge">
-          We're in {BRAND.address.area}. Come through, or say hi on Facebook and Instagram.
+        <PageHero pill="Find Us" title="Come Through" image={PHOTOS.entrance} imageAlt="The Butcher Monate Corner sign lit up at night">
+          We're at {BRAND.address.street}, Soshanguve. Call us on {BRAND.phones[0]} to book a table or a platter, or just pull up.
         </PageHero>
 
         {/* Map + Info */}
@@ -65,6 +65,20 @@ const Contact = () => {
 
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+                      <Phone size={18} />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-foreground">Call Us</p>
+                      {BRAND.phones.map((phone) => (
+                        <a key={phone} href={telHref(phone)} className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+                          {phone}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
                       <Clock size={18} />
                     </div>
                     <div>
@@ -90,7 +104,7 @@ const Contact = () => {
                           rel="noopener noreferrer"
                           className="text-sm text-muted-foreground hover:text-primary transition-colors"
                         >
-                          {label === "Instagram" ? "Be Lounge on Instagram" : "Be Lounge on Facebook"}
+                          Find {BRAND.name} on {label}
                         </a>
                       </div>
                     </div>

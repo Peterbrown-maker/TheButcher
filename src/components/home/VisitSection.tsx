@@ -1,7 +1,7 @@
 import { Clock, MapPin } from "lucide-react";
 import { VisitButtons } from "@/components/VisitButtons";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
-import { BRAND, GALLERY, OPENING_HOURS } from "@/data/belounge";
+import { BRAND, GALLERY, OPENING_HOURS } from "@/data/butcher";
 
 export function VisitSection() {
   return (
@@ -16,8 +16,8 @@ export function VisitSection() {
             <p className="font-script text-3xl text-primary mb-2">{BRAND.slogan}</p>
             <h2 className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">Come Through</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Pull up a chair on the terrace. Our food is freshly prepared to order, so sit back, pour something good and
-              let the evening happen.
+              Find us at {BRAND.address.street}, Soshanguve. Everything is grilled to order, so grab a cold one, find a
+              spot and let the fire do its thing.
             </p>
           </div>
         </ScrollReveal>

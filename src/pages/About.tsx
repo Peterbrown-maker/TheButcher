@@ -4,21 +4,21 @@ import { PageHero } from "@/components/PageHero";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
 import { SectionPill } from "@/components/SectionPill";
 import { motion } from "framer-motion";
-import { Beef, Fish, Music, Soup } from "lucide-react";
-import { BRAND, GALLERY, PHOTOS } from "@/data/belounge";
+import { Beef, Flame, Music, Soup } from "lucide-react";
+import { BRAND, GALLERY, PHOTOS } from "@/data/butcher";
 
 const values = [
-  { icon: Soup, name: "African Cuisine", role: "Ox tripe, tlhogo, skop and the Monday classics" },
-  { icon: Fish, name: "Seafood", role: "Oysters, prawns, calamari and whole Mozambican fish" },
-  { icon: Beef, name: "Quality Meat", role: "Steak, lamb chops, ribs and wors off the grill" },
-  { icon: Music, name: "Good Vibes", role: "Superior wines, premium bottles and feel-good music" },
+  { icon: Beef, name: "Fresh Meat", role: "Steak, lamb chops, short ribs, wors and chicken, cut fresh" },
+  { icon: Flame, name: "Shisanyama", role: "Flame grilled to order with pap, chakalaka and chips" },
+  { icon: Soup, name: "Kasi Classics", role: "Mogodu, skop, oxtail and beef stew" },
+  { icon: Music, name: "Monate Vibes", role: "Live DJs, cold drinks, cocktails and backup power" },
 ];
 
 const week = [
-  { time: "Mondays", event: "Traditional Monday meals: mogodu, tlhogo, tlhakwana, chicken feet, masonja, skop, marapo and the buffet" },
-  { time: "Every day", event: "Flame grills, slow-cooked Be Lounge meals like oxtail and goat stew, sharing platters and light meals" },
-  { time: "Weekends", event: "Weekend specials, bottles on ice, and the doors stay open until 02:00 on Friday and Saturday" },
-  { time: "Sundays", event: "Open from 10:00 until 23:00. Wind the weekend down slowly" },
+  { time: "Every day", event: "Shisanyama plates, braai platters, burgers, wraps and kasi classics straight from the fire" },
+  { time: "Fridays", event: "After-work braai, cold drinks and the weekend warm-up. Open until 02:00" },
+  { time: "Saturdays", event: "Big platters for the crew, DJs on the decks and the doors open until 02:00" },
+  { time: "Sundays", event: "Monate Sunday: live DJs, plus the wrap combo and cocktail deal for R200 from 12:00 to 18:00" },
 ];
 
 const About = () => {
@@ -28,13 +28,13 @@ const About = () => {
       <main>
         {/* Hero */}
         <PageHero
-          pill="Soshanguve, Pretoria"
-          title="Our Sanctuary"
-          image={PHOTOS.interior2}
-          imageAlt="The Be Lounge terrace with lanterns and hanging plants"
+          pill="Meat &amp; Shisanyama"
+          title="Monate Corner"
+          image={PHOTOS.entrance}
+          imageAlt="The Butcher Monate Corner sign lit up at night"
         >
-          {BRAND.fullName} is a lounge &amp; restaurant in Soshanguve. A place to eat
-          well, drink well and make good memories.
+          {BRAND.fullName} is a meat &amp; shisanyama spot at {BRAND.address.street}, Soshanguve. Fresh cuts, open
+          flames, cold drinks and good music.
         </PageHero>
 
         {/* Story + promise */}
@@ -42,16 +42,16 @@ const About = () => {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
               <ScrollReveal>
-                <img src={PHOTOS.interior} alt="Inside Be Lounge" className="w-full max-w-sm mx-auto rounded-2xl shadow-card-hover" />
+                <img src={PHOTOS.danceFloor} alt="People dancing at The Butcher" className="w-full max-w-sm mx-auto rounded-2xl shadow-card-hover" />
               </ScrollReveal>
               <ScrollReveal delay={0.15}>
                 <SectionPill>Our Promise</SectionPill>
                 <blockquote className="font-heading font-bold text-2xl md:text-3xl lg:text-4xl text-foreground mt-6 leading-snug">
-                  "Good food takes time to prepare. <span className="italic text-primary">Good memories are made here!</span>"
+                  "Pick your meat. <span className="italic text-primary">We'll handle the fire.</span>"
                 </blockquote>
                 <p className="text-muted-foreground leading-relaxed mt-6">
-                  Our food is freshly prepared to order. If you are in a hurry, have any allergies or queries, please bring
-                  it to our attention and we will do our utmost to accommodate you where possible.
+                  Everything is grilled to order, so give the fire a little time. If you're in a hurry or have any allergies,
+                  let your waitron know and we'll do our best to help.
                 </p>
               </ScrollReveal>
             </div>
@@ -63,7 +63,7 @@ const About = () => {
           <div className="container mx-auto px-4 lg:px-8">
             <ScrollReveal>
               <div className="text-center mb-16">
-                <SectionPill>Lounge &amp; Restaurant</SectionPill>
+                <SectionPill>Meat &amp; Shisanyama</SectionPill>
                 <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground mt-4">What We're Known For</h2>
               </div>
             </ScrollReveal>
@@ -84,12 +84,12 @@ const About = () => {
           </div>
         </section>
 
-        {/* A week at Be Lounge */}
+        {/* A week at The Butcher */}
         <section className="py-24 bg-white border-t border-border relative overflow-hidden">
           <div className="container mx-auto px-4 lg:px-8 relative z-10">
             <ScrollReveal>
               <div className="text-center mb-16">
-                <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground">A Week at {BRAND.fullName}</h2>
+                <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground">A Week at {BRAND.name}</h2>
               </div>
             </ScrollReveal>
 

@@ -1,24 +1,24 @@
-import { Music, UtensilsCrossed, Wine } from "lucide-react";
+import { Beef, Flame, Music } from "lucide-react";
 import { SectionPill } from "@/components/SectionPill";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
-import { BRAND } from "@/data/belounge";
+import { BRAND } from "@/data/butcher";
 
 const features = [
   {
-    icon: UtensilsCrossed,
-    title: "South African Cuisine",
+    icon: Beef,
+    title: "Butcher-Fresh Meat",
     description:
-      "A huge variety of South African dishes, from ox tripe and traditional Monday meals to seafood, oysters and quality steak.",
+      "Steak, lamb chops, short ribs, wors and chicken, cut fresh and ready for the fire. Choose your meat and how you want it done.",
   },
   {
-    icon: Wine,
-    title: "Wines, Bottles & Bubbles",
-    description: "Superior wines, premium whiskey, cognac and tequila, champagne on ice and cocktails from the bar.",
+    icon: Flame,
+    title: "Shisanyama Done Right",
+    description: "Flame grilled with pap, chakalaka and chips. Big braai platters for the crew, and kasi classics like mogodu and skop.",
   },
   {
     icon: Music,
-    title: "Feel-Good Music",
-    description: "Good food, good company and the right music. A dining experience you'll want to come back for.",
+    title: "Monate Vibes",
+    description: "Live DJs, Monate Sundays, cold drinks and cocktails. And a backup generator, so load shedding never stops the party.",
   },
 ];
 
@@ -28,18 +28,17 @@ export function AboutSection() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <ScrollReveal>
-            <SectionPill>Our Sanctuary · Soshanguve</SectionPill>
+            <SectionPill>Block FF · Soshanguve</SectionPill>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
             <h2 className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-foreground mt-4 mb-6">
-              "Just Be."
+              Welcome to Monate Corner
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Our extensive menu offers a huge variety of South African dishes, specialising in African cuisine (like ox
-              tripe), seafood (like oysters) and quality meat (like steak). Superior wines, premium bottles, bubbles and
-              feel-good music make for a unique dining experience.
+              The Butcher is where meat lovers in Sosha get together. Fresh cuts from the butchery go straight onto the
+              fire, the drinks are cold and the music is loud. Come for a plate, stay for the vibe.
             </p>
           </ScrollReveal>
         </div>

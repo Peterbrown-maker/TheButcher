@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { SectionPill } from "@/components/SectionPill";
-import { SPECIALS } from "@/data/belounge";
+import { SPECIALS } from "@/data/butcher";
 
 /** Swipeable strip of the current special posters. */
 export function SpecialsSection() {
@@ -17,8 +17,8 @@ export function SpecialsSection() {
         <ScrollReveal>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div>
-              <SectionPill>Weekend Favourites</SectionPill>
-              <h2 className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-foreground mt-4">Be Lounge Specials</h2>
+              <SectionPill>Events &amp; Specials</SectionPill>
+              <h2 className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-foreground mt-4">Monate at The Butcher</h2>
             </div>
             <div className="flex gap-3">
               <button

@@ -1,5 +1,5 @@
 import { Navigation } from "lucide-react";
-import { DIRECTIONS_URL, SOCIALS } from "@/data/belounge";
+import { DIRECTIONS_URL, SOCIALS } from "@/data/butcher";
 import { cn } from "@/lib/utils";
 
 const FacebookIcon = ({ size = 18 }: { size?: number }) => (
@@ -35,7 +35,7 @@ export function SocialIcons({ className, onDark = false }: { className?: string;
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`Be Lounge on ${label}`}
+          aria-label={`The Butcher on ${label}`}
           className={cn(
             "w-10 h-10 rounded-full border flex items-center justify-center transition-colors",
             onDark

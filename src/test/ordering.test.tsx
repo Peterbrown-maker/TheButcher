@@ -34,16 +34,16 @@ describe("ordering journey", { timeout: 30_000 }, () => {
     const user = userEvent.setup({ delay: null });
     renderAt("/menu");
 
-    // Add a Buffet (R100) and two Oxtails (R120 each).
-    await user.click(screen.getByRole("button", { name: "Add Buffet to cart" }));
-    await user.click(screen.getAllByRole("button", { name: "Add Oxtail to cart" })[0]);
-    await user.click(screen.getByRole("button", { name: "Add one more Oxtail" }));
+    // Add a Boerewors (R80) and two Lamb Chops (R160 each).
+    await user.click(screen.getByRole("button", { name: "Add Boerewors to cart" }));
+    await user.click(screen.getByRole("button", { name: "Add Lamb Chops to cart" }));
+    await user.click(screen.getByRole("button", { name: "Add one more Lamb Chops" }));
 
     // Cart bar → drawer shows the right total.
     await user.click(screen.getByRole("button", { name: /view your order/i }));
     const drawer = await screen.findByRole("dialog");
     expect(within(drawer).getByText("3 items · freshly prepared to order")).toBeInTheDocument();
-    expect(within(drawer).getByText("R340")).toBeInTheDocument();
+    expect(within(drawer).getByText("R400")).toBeInTheDocument();
 
     // Logged out, so checkout goes via sign up and comes back.
     await user.click(within(drawer).getByRole("button", { name: "Log in to Checkout" }));
@@ -67,7 +67,7 @@ describe("ordering journey", { timeout: 30_000 }, () => {
     expect(screen.getByText("Dine in · Table 7")).toBeInTheDocument();
     expect(screen.getByText("Pay at the table (cash or card)")).toBeInTheDocument();
     expect(screen.getByText("Pap with the oxtail")).toBeInTheDocument();
-    expect(screen.getByText("R340")).toBeInTheDocument();
+    expect(screen.getByText("R400")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Cancel order" })).toBeInTheDocument();
 
     // The cart is emptied and the order is in the account history.
@@ -80,7 +80,7 @@ describe("ordering journey", { timeout: 30_000 }, () => {
   it("rejects an invalid card and accepts a valid one", async () => {
     const user = userEvent.setup({ delay: null });
     renderAt("/menu");
-    await user.click(screen.getByRole("button", { name: "Add Club Steak to cart" }));
+    await user.click(screen.getByRole("button", { name: "Add Rump Steak 300g to cart" }));
     await user.click(screen.getAllByRole("button", { name: /open cart, 1 item/i })[0]);
     await user.click(within(await screen.findByRole("dialog")).getByRole("button", { name: "Log in to Checkout" }));
     await signUp(user);
@@ -90,12 +90,12 @@ describe("ordering journey", { timeout: 30_000 }, () => {
     await user.type(screen.getByLabelText("Card number"), "4242424242424241");
     await user.type(screen.getByLabelText("Expiry"), "1230");
     await user.type(screen.getByLabelText("CVC"), "123");
-    await user.click(screen.getByRole("button", { name: "Pay R90" }));
+    await user.click(screen.getByRole("button", { name: "Pay R150" }));
     expect(await screen.findByText("Check the card number.")).toBeInTheDocument();
 
     await user.clear(screen.getByLabelText("Card number"));
     await user.type(screen.getByLabelText("Card number"), "4242424242424242");
-    await user.click(screen.getByRole("button", { name: "Pay R90" }));
+    await user.click(screen.getByRole("button", { name: "Pay R150" }));
     expect(await screen.findByText(/your order is in/i, {}, { timeout: 4000 })).toBeInTheDocument();
     expect(screen.getByText("Paid by card ending 4242")).toBeInTheDocument();
   });

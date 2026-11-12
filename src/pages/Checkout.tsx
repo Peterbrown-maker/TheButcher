@@ -9,7 +9,7 @@ import { QuantityControl } from "@/components/cart/QuantityControl";
 import { useCart } from "@/context/cart";
 import { useAuth } from "@/context/auth";
 import { useOrders, type PaymentMethod } from "@/context/orders";
-import { formatPrice, OPENING_HOURS } from "@/data/belounge";
+import { formatPrice, OPENING_HOURS } from "@/data/butcher";
 import { formatSlot, isTakingOrders, pickupSlots } from "@/lib/hours";
 import { cn } from "@/lib/utils";
 

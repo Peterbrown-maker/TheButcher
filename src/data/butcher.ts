@@ -1,51 +1,63 @@
-// Everything the site says about Be Lounge lives here, so a price, the
-// address or the opening hours only ever need changing in one place.
+// Everything the site says about The Butcher Monate Corner lives here, so a
+// price, the address or the opening hours only ever need changing in one place.
 //
-// TODO (owner): confirm the street address, phone number / email and socials.
+// Address and phone numbers come from the "Monate Sunday" event poster.
+// TODO (owner): confirm the food prices, opening hours and social media links.
 
-const IMG = "/images/macnose"; // food & venue photos
-const BRAND_IMG = "/images/belounge";
+const IMG = "/images/butcher";
 
 export const BRAND = {
-  name: "Be Lounge",
-  fullName: "Be Lounge",
-  descriptor: "Lounge & Restaurant · Soshanguve",
-  slogan: "Just Be.",
-  tagline: "Good food, good music, good people. Just be.",
+  name: "The Butcher",
+  fullName: "The Butcher Monate Corner",
+  descriptor: "Meat & Shisanyama · Block FF, Soshanguve",
+  slogan: "Monate Corner",
+  tagline: "Fresh meat, open flames, good music. This is where Sosha gets together.",
   address: {
-    street: "Soshanguve",
-    area: "Soshanguve, Pretoria",
-    city: "Pretoria, Gauteng",
+    street: "342 Block FF",
+    area: "Block FF, Soshanguve",
+    city: "Soshanguve, Pretoria, Gauteng",
   },
-  /** Used for the map embed and the "Get Directions" links. */
-  geo: { lat: -25.513655, lng: 28.108461 },
-  logo: `${BRAND_IMG}/logo.png`,
-  heroImage: `${IMG}/interior2.jpg`,
+  phones: ["012 023 0860", "083 343 9259"],
+  logo: `${IMG}/logo.png`,
+  heroImage: `${IMG}/entrance.webp`,
 } as const;
 
 export const ADDRESS_LINE = `${BRAND.address.street}, ${BRAND.address.city}`;
-export const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${BRAND.geo.lat},${BRAND.geo.lng}`;
-export const MAP_EMBED_URL = `https://maps.google.com/maps?q=${BRAND.geo.lat},${BRAND.geo.lng}&z=16&output=embed`;
+const MAP_QUERY = encodeURIComponent(`The Butcher Monate Corner, ${BRAND.address.street}, Soshanguve`);
+export const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${MAP_QUERY}`;
+export const MAP_EMBED_URL = `https://maps.google.com/maps?q=${MAP_QUERY}&z=16&output=embed`;
+export const telHref = (phone: string) => `tel:+27${phone.replace(/\s/g, "").replace(/^0/, "")}`;
 
 export const SOCIALS = {
-  facebook: "https://www.facebook.com/search/top?q=Be%20Lounge%20Soshanguve",
-  instagram: "https://www.instagram.com/explore/search/keyword/?q=Be%20Lounge%20Soshanguve",
+  facebook: "https://www.facebook.com/search/top?q=The%20Butcher%20Monate%20Corner",
+  instagram: "https://www.instagram.com/explore/search/keyword/?q=The%20Butcher%20Monate%20Corner",
 };
 
 export const PHOTOS = {
-  interior: `${IMG}/interior.jpg`,
-  interior2: `${IMG}/interior2.jpg`,
-  food: `${IMG}/food.jpg`,
-  foodDrink: `${IMG}/food_drink.jpg`,
-  meal: `${IMG}/meal.jpg`,
-  traditional: `${IMG}/traditional_food.png`,
-  oysters: `${IMG}/champagne_oysters.jpg`,
+  entrance: `${IMG}/entrance.webp`,
+  danceFloor: `${IMG}/dance_floor.webp`,
+  insideEvent: `${IMG}/inside_event.webp`,
+  dj: `${IMG}/dj_event.webp`,
+  dj2: `${IMG}/dj_event2.webp`,
+  poster: `${IMG}/monate_sunday_poster.webp`,
+  feast: `${IMG}/feast_collage.jpg`,
+  chicken: `${IMG}/grilled_chicken.jpg`,
+  wings: `${IMG}/wings_and_sausage.jpg`,
+  steak: `${IMG}/steak_and_lamb_chops.jpg`,
+  ribs: `${IMG}/glazed_ribs.jpg`,
+  mixedGrill: `${IMG}/mixed_grill_platter.jpg`,
+  burger: `${IMG}/cheeseburger_and_chips.jpg`,
+  seafood: `${IMG}/seafood_platter.jpg`,
+  cocktails: `${IMG}/cocktails.jpg`,
+  kasiPlate: `${IMG}/full_plate.jpg`,
+  pap: `${IMG}/pap.jpg`,
 };
 
+// TODO (owner): confirm these hours. Keep src/lib/hours.ts in sync.
 export const OPENING_HOURS = [
   { days: "Monday – Thursday", hours: "10:00 – 22:00" },
   { days: "Friday – Saturday", hours: "10:00 – 02:00" },
-  { days: "Sunday", hours: "10:00 – 23:00" },
+  { days: "Sunday", hours: "10:00 – 22:00" },
 ];
 
 export interface MenuItem {
@@ -72,161 +84,121 @@ export interface MenuSection {
 
 export const formatPrice = (price: MenuItem["price"]) => (typeof price === "number" ? `R${price}` : price);
 
+const WITH = "Served with pap & chakalaka or chips";
+
+// TODO (owner): these food prices are placeholders. Replace them with your real menu.
 export const MENU: MenuSection[] = [
   {
-    id: "traditional",
-    name: "Traditional Monday Meals",
+    id: "shisanyama",
+    name: "Shisanyama Plates",
     kind: "food",
-    tagline: "Available on Mondays",
-    note: "Ask your waitron for today's selection.",
-    image: PHOTOS.traditional,
+    tagline: "Flame grilled daily",
+    note: "Choose your sauce: peri-peri (hot or mild), BBQ or lemon & herb.",
+    image: PHOTOS.steak,
     groups: [
       {
         items: [
-          { name: "Buffet", price: 100, description: "4 Proteins, starch of your choice and 2 Veggies" },
-          { name: "Ox Tripe (Mogodu)", price: 90, description: "Served with pap / rice / ting / samp or dumpling & 2 veggies" },
-          { name: "Nama Ya Tlhogo", price: 90, description: "Served with pap / rice / ting / samp or dumpling & 2 veggies" },
-          { name: "Tlhakwana", price: 80, description: "Served with pap / rice / ting / samp or dumpling & 2 veggies" },
-          { name: "Chicken Feet", price: 70, description: "Served with pap / rice / ting / samp or dumpling & 2 veggies" },
-          { name: "Masonja", price: 70, description: "Served with atchaar" },
-          { name: "Half Skop Meal", price: 95, description: "Served with atchaar" },
-          { name: "Marapo", price: 70, description: "Served with pap / rice / ting / samp or dumpling & 2 veggies" },
-        ],
-      },
-    ],
-  },
-  {
-    id: "grills",
-    name: "From The Grill",
-    kind: "food",
-    tagline: "Available daily",
-    note: "Ask your waitron for sauce options.",
-    image: PHOTOS.meal,
-    groups: [
-      {
-        items: [
-          { name: "Chicken Wings", price: 85, description: "3 flame grilled chicken wings served with fries and greek salad, a sauce of your choice (hot or mild)" },
-          { name: "Chicken Wings (6)", price: 150, description: "6 flame grilled chicken wings served with fries and greek salad, a sauce of your choice (hot or mild)" },
-          { name: "Buffalo Wings / Texas Fried", price: 120, description: "12 flame grilled chicken winglets served with fries" },
-          { name: "Smoked Ribs & Wings", price: 130, description: "Succulent pork ribs marinated in our traditional sauce, wings (bbq / peri) served with fries and greek salad" },
-          { name: "Whole Mozambican Fish", price: 120, description: "Grilled whole fish served with fries or rice" },
-          { name: "Grilled / Fried Hake Fillet", price: 95, description: "Grilled hake served with fries and greek salad" },
-          { name: "Braai Espetada", price: 180, description: "Wings, Short Ribs, Chillie wors, Lamb Chops, served with fries & side salad" },
-          { name: "Mixed Grill (Steak & Wors)", price: 110 },
-          { name: "Lamb Chops", price: 120 },
-          { name: "Pork Chops", price: 80 },
-          { name: "Club Steak", price: 90 },
-          { name: "Wors", price: 80 },
-          { name: "Grilled Chicken", price: 85 },
-          { name: "Full Chicken", price: 180, description: "Grilled (Hot / Mild)" },
-        ],
-      },
-    ],
-  },
-  {
-    id: "cooked",
-    name: "Cooked Be Lounge Meals",
-    kind: "food",
-    tagline: "Available daily \u00b7 Ask your waitron",
-    note: "Ask your waitron for daily availability.",
-    image: PHOTOS.food,
-    groups: [
-      {
-        items: [
-          { name: "Beef Stew", price: 95, description: "Served with pap / rice / ting / samp or dumplings and 2 veggies" },
-          { name: "Oxtail", price: 120, description: "Succulent pieces of slow cooked oxtail in an aromatic sauce served with pap / rice / samp / ting or dumpling and 2 veggies" },
-          { name: "Goat Stew / Chevon", price: 120, description: "Traditionally cooked goat stew served with pap / rice / samp / ting or dumpling and 2 veggies" },
-          { name: "Lamb Curry", price: 120, description: "Rich heartiness lamb stew cooked in red wine served with pap / rice / samp / ting or dumpling and 2 veggies" },
-          { name: "Hardbody Chicken", price: 90, description: "Traditionally cooked hardbody chicken served with pap / rice / samp / ting or dumpling and 2 veggies" },
-          { name: "Beef Shin", price: 90, description: "Traditionally cooked beef shin served with pap / rice / samp / ting or dumpling and 2 veggies" },
-        ],
-      },
-      {
-        name: "Extras",
-        items: [
-          { name: "Beef Stew Only", price: 95 },
-          { name: "Oxtail Only", price: 120 },
-          { name: "Goat Stew Only", price: 120 },
-          { name: "Lamb Stew Only", price: 120 },
-        ],
-      },
-    ],
-  },
-  {
-    id: "starch",
-    name: "Starch & Extras",
-    kind: "food",
-    tagline: "Available daily \u00b7 Ask your waitron",
-    note: "Ask your waitron for daily availability.",
-    groups: [
-      {
-        name: "Starch Options",
-        items: [
-          { name: "Pap Only", price: 15 },
-          { name: "Samp Only", price: 15 },
-          { name: "Rice Only", price: 15 },
-          { name: "Dumpling", price: 20 },
-          { name: "Bogobe Ba Mabele (Ting)", price: 15 },
-          { name: "Fries Only (Large)", price: 30 },
-        ],
-      },
-      {
-        name: "Meat (Proteins) & Extras",
-        items: [
-          { name: "Ox Tripe (Mogodu) Only", price: 90 },
-          { name: "Tlhakwana Only", price: 80 },
-          { name: "Tlhogo Only", price: 80 },
-          { name: "Half Skop Only", price: 95 },
-          { name: "Mogodu + Tlhogo (Mix)", price: 80 },
-          { name: "Mogodu + Tlhakwana (Mix)", price: 80 },
-          { name: "Tlhakwana + Tlhogo (Mix)", price: 80 },
+          { name: "Quarter Chicken", price: 75, description: WITH },
+          { name: "Half Chicken", price: 120, description: WITH },
+          { name: "Full Chicken", price: 210, description: "Whole flame-grilled chicken with 2 pap or chips and chakalaka" },
+          { name: "Chicken Wings (6)", price: 95, description: WITH },
+          { name: "Boerewors", price: 80, description: WITH },
+          { name: "Rump Steak 300g", price: 150, description: WITH },
+          { name: "T-Bone 400g", price: 170, description: WITH },
+          { name: "Lamb Chops", price: 160, description: WITH },
+          { name: "Pork Chops", price: 110, description: WITH },
+          { name: "Sticky Pork Ribs", price: 165, description: WITH },
+          { name: "Beef Short Ribs", price: 140, description: WITH },
+          { name: "Mixed Grill", price: 185, description: "Steak, wors, wings and a lamb chop with pap, chakalaka or chips" },
         ],
       },
     ],
   },
   {
     id: "platters",
-    name: "Sharing Platters",
+    name: "Braai Platters",
     kind: "food",
-    tagline: "Available daily \u00b7 Ask your waitron",
-    note: "Ask your waitron for availability.",
-    image: PHOTOS.foodDrink,
+    tagline: "Made for sharing",
+    note: "Platters take a little longer. Good meat takes time on the fire.",
+    image: PHOTOS.mixedGrill,
     groups: [
       {
         items: [
-          { name: "Be Lounge Shisanyama Platter", price: 590, description: "4 short ribs, 4 wings, 2 pork chops, served with 4 pap, salsa & gravy" },
-          { name: "Seafood Platter for One", price: 180, description: "Hake, Calamari, Prawns, Mussels, Squid heads and fries" },
-          { name: "Platter for One", price: 180, description: "3 Wings, Cocktail sausages, ribs served with fries" },
-          { name: "Sharing Platter", price: 450, description: "Cocktail sausages, Ribs, hake fillet, crumbled wings / grilled wings, calamari and fries" },
-          { name: "Be Lounge Meaty Platter", price: 460, description: "Lamb chops, Short rib, Cocktail wors, chicken wings & Fries" },
+          { name: "Butcher's Platter for 2", price: 380, description: "Short ribs, wings, wors and lamb chops with 2 pap, chakalaka & chips" },
+          { name: "Monate Platter for 4", price: 690, description: "Steak, short ribs, wings, wors, pork chops and lamb chops with 4 pap, chakalaka, salad & chips" },
+          { name: "Family Feast for 6", price: 990, description: "Full chicken, short ribs, wings, wors, T-bone and lamb chops with 6 pap, chakalaka, salad & chips" },
+          { name: "Seafood Platter for 2", price: 420, description: "Hake, calamari, prawns and mussels with chips and salad" },
         ],
       },
     ],
   },
   {
-    id: "light",
-    name: "Light Meals & Dessert",
+    id: "kasi",
+    name: "Kasi Classics",
     kind: "food",
-    tagline: "Available daily \u00b7 Ask your waitron",
-    note: "Ask your waitron for daily availability.",
-    image: PHOTOS.oysters,
+    tagline: "Ask what's cooking today",
+    note: "Availability changes daily. Ask your waitron.",
+    image: PHOTOS.kasiPlate,
     groups: [
       {
-        name: "Light Meals",
         items: [
-          { name: "Chicken Salad", price: 90 },
-          { name: "Chorizo & Olives", price: 78 },
-          { name: "Be Lounge Wings and Calamari", price: 105 },
-          { name: "Large Oysters", price: 40 },
-          { name: "Be Lounge Champagne Oysters", price: "R35 each / R180", description: "Combo of 6x Oysters, served fresh with champagne mignonette" },
-          { name: "Be Lounge Prawn Tempura", price: 85, description: "Deep fried prawns served with creamy dip sauce" },
+          { name: "Mogodu (Tripe)", price: 90, description: "Served with pap or dumpling" },
+          { name: "Half Skop", price: 110, description: "Spiced and slow cooked, served with pap" },
+          { name: "Mogodu & Skop Mix", price: 130, description: "Served with pap and atchaar" },
+          { name: "Beef Stew", price: 95, description: "Served with pap, rice or dumpling and veggies" },
+          { name: "Oxtail", price: 140, description: "Slow cooked, served with pap, rice or dumpling and veggies" },
         ],
       },
+    ],
+  },
+  {
+    id: "burgers-wraps",
+    name: "Burgers & Wraps",
+    kind: "food",
+    tagline: "Quick bites",
+    image: PHOTOS.burger,
+    groups: [
       {
-        name: "Dessert",
         items: [
-          { name: "Be Lounge Sweet Treat", price: 70, description: "Ice cream or Cake of the day (with a drizzle of Custard)" },
-          { name: "Snack Bowl", price: 80, description: "Biltong, Peanuts (Light snack)" },
+          { name: "Butcher Beef Burger", price: 95, description: "200g beef patty, cheese, lettuce, tomato and our house sauce, with chips" },
+          { name: "Chicken Burger", price: 85, description: "Grilled chicken breast, lettuce, tomato and mayo, with chips" },
+          { name: "Steak Wrap", price: 95, description: "Grilled strips of steak, onions, peppers and sauce, with chips" },
+          { name: "Chicken Wrap", price: 85, description: "Peri-peri chicken, lettuce, tomato and mayo, with chips" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "seafood",
+    name: "From the Sea",
+    kind: "food",
+    tagline: "Fresh & fried",
+    image: PHOTOS.seafood,
+    groups: [
+      {
+        items: [
+          { name: "Hake & Chips", price: 95, description: "Grilled or fried, with chips and salad" },
+          { name: "Calamari & Chips", price: 110, description: "With chips and tartare sauce" },
+          { name: "Prawns (8)", price: 180, description: "Grilled in garlic butter, with rice or chips" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "sides",
+    name: "Sides & Extras",
+    kind: "food",
+    groups: [
+      {
+        items: [
+          { name: "Pap", price: 15 },
+          { name: "Chakalaka", price: 20 },
+          { name: "Chips (Large)", price: 35 },
+          { name: "Dumpling", price: 20 },
+          { name: "Garden Salad", price: 40 },
+          { name: "Coleslaw", price: 25 },
+          { name: "Garlic Roll", price: 20 },
+          { name: "Extra Sauce", price: 10 },
         ],
       },
     ],
@@ -514,7 +486,7 @@ export const MENU: MenuSection[] = [
     groups: [
       {
         items: [
-          { name: "Be Lounge Coffee", price: 50 },
+          { name: "Filter Coffee", price: 50 },
           { name: "Rooibos Tea", price: 30 },
           { name: "Hot Chocolate", price: 58 },
           { name: "Coffee & Cake Slice", price: 80 },
@@ -526,50 +498,45 @@ export const MENU: MenuSection[] = [
 
 export const MENU_ITEM_COUNT = MENU.reduce((n, s) => n + s.groups.reduce((m, g) => m + g.items.length, 0), 0);
 
-/** Weekend specials and promos, as posted by Be Lounge. */
+/** Event posters and nights at The Butcher. */
 export const SPECIALS = [
-  { src: `${IMG}/buffet_for_4.jpeg`, alt: "Be Lounge buffet for 4 weekend special" },
-  { src: `${IMG}/full_chicken_coke.jpg`, alt: "Full chicken and Coke meal special" },
-  { src: `${IMG}/hennessy_tonic.jpeg`, alt: "Hennessy and tonic special" },
-  { src: `${IMG}/pizza.jpg`, alt: "Pizza weekend special" },
-  { src: `${IMG}/warm_treats.jpeg`, alt: "Warm treats dessert special" },
-  { src: `${IMG}/heineken_daily.jpeg`, alt: "Heineken daily special" },
-  { src: `${IMG}/weekends_and_specials.jpeg`, alt: "Weekends and specials" },
-  { src: `${IMG}/weekends_and_specials_bottles.jpeg`, alt: "Weekend bottle specials" },
-  { src: `${IMG}/wine_and_dine_fish.jpeg`, alt: "Wine and dine fish special" },
-  { src: `${IMG}/wine_and_dine_steak.jpeg`, alt: "Wine and dine steak special" },
+  { src: PHOTOS.poster, alt: "Monate Sunday: wrap combo and cocktail for R200, with live DJs" },
+  { src: PHOTOS.danceFloor, alt: "The dance floor at a Butcher event" },
+  { src: PHOTOS.dj, alt: "DJ playing a set at The Butcher" },
+  { src: PHOTOS.insideEvent, alt: "Guest at a Butcher Monate Corner event" },
+  { src: PHOTOS.dj2, alt: "Another DJ set at The Butcher" },
 ];
 
 export const GALLERY = [
-  { src: PHOTOS.interior2, alt: "The Be Lounge terrace with lanterns and hanging plants" },
-  { src: PHOTOS.food, alt: "A table of Be Lounge dishes: grills, stews and sides" },
-  { src: PHOTOS.traditional, alt: "Traditional South African meal" },
-  { src: PHOTOS.meal, alt: "A grilled meal from Be Lounge" },
-  { src: PHOTOS.oysters, alt: "Be Lounge Champagne Oysters" },
-  { src: PHOTOS.foodDrink, alt: "Food and drinks at Be Lounge" },
-  { src: PHOTOS.interior, alt: "Inside Be Lounge" },
-  { src: `${IMG}/wine_and_dine_steak.jpeg`, alt: "Steak with wine" },
+  { src: PHOTOS.entrance, alt: "The Butcher Monate Corner sign lit up at night" },
+  { src: PHOTOS.mixedGrill, alt: "A mixed grill platter" },
+  { src: PHOTOS.danceFloor, alt: "People dancing at The Butcher" },
+  { src: PHOTOS.steak, alt: "Steak and lamb chops" },
+  { src: PHOTOS.dj, alt: "DJ set at The Butcher" },
+  { src: PHOTOS.ribs, alt: "Sticky pork ribs" },
+  { src: PHOTOS.insideEvent, alt: "A night out at Monate Corner" },
+  { src: PHOTOS.cocktails, alt: "Cocktails from the bar" },
 ];
 
 export const FAQS = [
   {
-    q: "When can I get the traditional meals?",
-    a: "Mogodu, tlhogo, tlhakwana, chicken feet, masonja, skop, marapo and the buffet are served on Mondays. Ask your waitron for the day's selection.",
+    q: "Where are you?",
+    a: `${BRAND.address.street}, Soshanguve. Tap "Get Directions" anywhere on the site to open it in Google Maps.`,
   },
   {
-    q: "How late are you open?",
-    a: "Monday to Thursday until 22:00, Friday and Saturday until 02:00, and Sunday until 23:00. We open at 10:00 every day.",
+    q: "What's Monate Sunday?",
+    a: "Our Sunday session with live DJs. Look out for the wrap combo and cocktail deal (R200, 12:00 – 18:00). Check the Specials page for what's coming up.",
   },
   {
-    q: "Why does my food take a while?",
-    a: "Good food takes time to prepare. Everything is freshly made to order, so if you're in a hurry, let your waitron know and we'll do our best to help.",
+    q: "Do you have power during load shedding?",
+    a: "Yes. We run a backup generator, so the music and the fire keep going.",
+  },
+  {
+    q: "Can I book a table or a platter for a group?",
+    a: `Yes. Call us on ${BRAND.phones[0]} or ${BRAND.phones[1]}, or order ahead on this site and choose "Dine in".`,
   },
   {
     q: "Can you cater for allergies?",
-    a: "Please tell your waitron about any allergies or dietary needs before you order and we'll do our utmost to accommodate you where possible.",
-  },
-  {
-    q: "Where are you?",
-    a: `We're in ${BRAND.address.area}. Tap "Get Directions" anywhere on the site to open it in Google Maps.`,
+    a: "Tell your waitron about any allergies or dietary needs before you order and we'll do our best to help.",
   },
 ];
